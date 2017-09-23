@@ -1,0 +1,35 @@
+{
+  "name": "reflectandconnect",
+  "version": "1.0.0",
+  "description": "A helpful web interface for journaling.  Exposes users to relevant civic activities and/or displays summaries of the reflections over time by dashboard.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craklyn/reflectAndConnect.git"
+  },
+  "keywords": [
+    "reflect",
+    "connect",
+    "journal",
+    "therapy",
+    "therapeutic",
+    "\u0016counseling"
+  ],
+  "author": "Daniel Blackburn, Catherine Grabar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craklyn/reflectAndConnect/issues"
+  },
+  "homepage": "https://github.com/craklyn/reflectAndConnect#readme",
+  "private": true,
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
