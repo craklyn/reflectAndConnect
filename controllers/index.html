@@ -8,22 +8,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://localhost:4000/style.css">
-
 </head>
-<body>
 
+<body>
 <div class="container">
   <div class="row titlebar">
     <div class="col-xs-12">
         <h1> Reflect & Connect </h1>
     </div>
   </div>
-  <div class="row" ng-controller="GoodController1">
+  <div class="row" ng-controller="journalController">
     <div class ="col-xs-8 leftcontent">
         <h2>How are you feeling today</h2>
         <textarea rows="15" class="form-control" ng-model="journalEntry" placeholder="Talk about your day" ></textarea>
         <p align="right">
-        <button type="button" class="btn btn-success">Succress</button>
+        <button type="button" class="btn btn-success">Success</button>
         </p>
     </div>
     <div class="col-xs-4 rightcontent">
@@ -31,12 +30,13 @@
         <div class="rectangle">
         <img src="images/filmimage.png">
              <div class="cardcontent">
-                <h3>Local Film Festival</h3>
-                <p>Free</p>
-                <p>September 23rd 7:00 PM</p>
-                <p>1515 12th Ave Seattle, WA 98122</p>
-                <p> description goes here test test test long long long description hope it wraps correctly yikes. daniel is a hottie. i love him too much</p>
-                <button type="button" class="btn btn-success">Succress</button>
+                <h3>{{ currentCard.title }}</h3>
+                <p>{{ currentCard.cost }}</p>
+                <p>{{ currentCard.when }}</p>
+                <p>{{ currentCard.where }}</p>
+                <p>{{ currentCard.description }}</p>
+                <p>Debug keywords: {{ currentCard.keywords }} </p>
+                <button type="button" class="btn btn-success">Success</button>
             </div>
         </div>
     </div>
@@ -59,11 +59,24 @@
 angular.module('ngAppStrictDemo', [])
 // BadController will fail to instantiate, due to relying on automatic function annotation,
 // rather than an explicit annotation
-.controller('GoodController1', ['$scope', function($scope) {
+.controller('journalController', ['$scope', function($scope) {
   $scope.journalEntry = "";
   $scope.b = 2;
-}])
-
+  
+  $scope.cards = [
+    {
+      title: "Local Film Festival",
+      cost: "Free",
+      when: "September 23rd 7:00 PM",
+      where: "1515 12th Ave Seattle, WA 98122",
+      description: "description goes here test test test long long long description hope it wraps correctly yikes. daniel is a computer simulation. i love him too much",
+      keyWords: "",
+    },
+    {
+    },
+  ];
+  $scope.currentCard = $scope.cards[0];
+}]);
  
 </script>
 
