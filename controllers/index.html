@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://localhost:9000/style.css">
+
+    <style>
+       
+        .titlebar {
+            background-color: #1974C6;
+            height: 76px;
+
+        }
+        h1 {
+            font-size: 15px;
+            color: white;
+            padding-left: 16px;
+            padding-top: 20px;
+        }
+
+        .container {
+            padding-left: 0px;
+            padding-right:0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 100%;
+        }
+
+        .maincontent {
+            margin-left: 16px;
+
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        textarea{
+            
+        }
+    </style>
+
+</head>
 <body>
 
-<h1>My First JavaScript</h1>
+<div class="container">
+  <div class="row titlebar">
+    <div class="col-md-12">
+        <h1> Reflect & Connect </h1>
+    </div>
+  </div>
+  <div class="row maincontent">
+    <div class="col-md-6">
+        <h2>How are you feeling today</h2>
+        <textarea rows="15" cols="60" >Talk about your day</textarea>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="row">
+    
+  </div>
+</div>
 
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
+
+
 
 <p id="demo"></p>
 
