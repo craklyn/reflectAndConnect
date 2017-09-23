@@ -6,20 +6,22 @@
         h1 {
             font-size: 15px;
             color: white;
-            padding-left: 16px;
+            padding-left: 25px;
             padding-top: 20px;
         }
 
+        
         .container {
             padding-left: 0px;
             padding-right:0px;
             margin-left: 0px;
             margin-right: 0px;
-            width: 100%;
+            width: 98.8%;
         }
+        
 
         .maincontent {
-            margin-left: 16px;
+            
 
         }
         h2 {
@@ -29,21 +31,32 @@
 
         textarea{
             resize:none;
+            font-size: 18px;
+            padding-left: 10px;
+            padding-top: 6px;
         }
         .leftcontent{
-            padding-left: 30px;
+            padding-left: 40px;
         }
         .rightcontent{
-            padding-left: 30px;
+            
 
         }
 
         .rectangle {
-            background-color: blue;
-            width:100px;
-            height:100px;
+            background-color: white;
+            border-color: #4f4f4f;
+            border-width:1px;
+            border-style: solid;
+            width:100%;
+            min-height:250px;
+            box-shadow: 0px 2px 4px 1px #C8C8C8;
         }
-
+        .button {
+         background:blue;
+         width: 400px;
+        } 
+/*
         .button {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -70,3 +83,5 @@
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+*/
+
