@@ -29,7 +29,7 @@
       <h2>Recommended events</h2>
       <a onclick="openInfoModal()" href="#infoModal">
         <div class="rectangle">
-            <img src="{{ currentCard.image }}">
+            <img src="images/{{ currentCard.image }}">
             <div class="cardcontent">
                 <h3>{{ currentCard.title }}</h3>
                 <p>Price: {{ currentCard.cost }}</p>
@@ -86,34 +86,7 @@ angular.module('ngAppStrictDemo', [])
 .controller('journalController', ['$scope', function($scope) {
   $scope.journalEntry = "";
   
-  $scope.cards = [
-    {
-      title: "Local Film Festival",
-      cost: "Free",
-      when: "September 23rd 7:00 PM",
-      where: "1515 12th Ave Seattle, WA 98122",
-      description: "description goes here test test test long long long description hope it wraps correctly yikes. daniel is a computer simulation. i love him too much",
-      keyWords: "film festival movie cinema",
-      image: "images/filmimage.png",
-    },
-    {
-      title: "Another description to test",
-      cost: "Free",
-      when: "September 23rd 7:00 PM",
-      where: "1515 12th Ave Seattle, WA 98122",
-      description: "This is the second description.  Very neat",
-      keyWords: "second description cool",
-      image: "images/filmimage.png",
-    },
-    {
-      title: "Local music party",
-      cost: "Free",
-      when: "September 23rd 7:00 PM",
-      where: "1515 12th Ave Seattle, WA 98122",
-      description: "music science popularity contest so cool so suave so neato",
-      keyWords: "music party",
-      image: "images/filmimage.png",
-    }];
+  $scope.cards = [{"when":"October 5, 10am to 8pm","where":"1413 NE 45th St, Seattle","description":"Free admission to the Burke Museum every first Thursday. The Burke Museum of Natural History and Culture is a natural history museum in Seattle","website":"http://www.burkemuseum.org/","keyWords":"museum history uw dinosaur geology paleontology","image":"museum.jpg","keyWords.1":"museum history uw dinosaur geology paleontology"},{"when":"October 10, 2pm - 4pm","where":"704 Terry Ave, Seattle","description":"A unique opportunity for people living with dementia, their care partners, family, and friends to enjoy companionship, good food, music, and fun in a relaxed environment. There is no cost, except for food and drink ordered from the menu. No registration is required","website":"http://fryemuseum.org/calendar/event/6497/?","keyWords":"alzheimer's art museum","image":"coffee.jpg","keyWords.1":"alzheimer's art museum"},{"when":"October 5, 5pm-9pm","where":"9404 E. Marginal Way South, Seattle","description":"he Museum of Flight is a private non-profit air and space museum in the northwest United States","website":"http://www.museumofflight.org/","keyWords":"flight plane flying pilot space museum","image":"museum.jpg","keyWords.1":"flight plane flying pilot space museum"},{"when":"Every Sunday 10:00am","where":"1010 Valley St, Seattle","description":"A Seattle tradition for more than 25 years! Our volunteer skippers and crew take passengers out on Lake Union for unforgettable voyages. Sprit boats, steamboats, electric boats, schooners, ketches, yawls, and yachts: come every Sunday to sail them all, year-round, rain or shine for free.","website":"http://cwb.org/events/cast-off/","keyWords":"sail boat sailing lake","image":"sailboat.jpg","keyWords.1":"sail boat sailing lake"},{"when":"Mondays and Wednesdays 10:30am","where":"4217 SW Oregon St., Seattle, WA 98116","description":"Your home for bridge in Seattle. Please show up by 10:15. Great soup, sandwiches and coffee are available from the staffed kitchen","website":"http://www.bridgeinseattle.org/alki/","keyWords":"bridge senior center club food","image":"generic.jpg","keyWords.1":"bridge senior center club food"},{"when":"October 18, 6:30 PM","where":"4649 Sunnyside Ave. N., Seattle, WA 98103","description":"Find out where the hot fishing is. In addition, we have speakers who talk about the latest fishing news, equipment, and trips being offered in the area.","website":"http://www.seattlepoggies.com/","keyWords":"fishing","image":"sailboat.jpg","keyWords.1":"fishing"},{"when":"Sunday 10:30am-2:30pm","where":"20412 Bothell Everett Highway","description":"Gurudwara Sikh Centre of Seattle (G.S.C.S) is one of the main Gurudwaras in the state of Washington. We are a non-profit, non-political charitable organization which promotes the philosophy of unity, equality, humanity and universalism.","website":"http://www.sikhcentreofseattle.org/Prayer.aspx","keyWords":"","image":"interfaith.jpg","keyWords.1":""},{"when":"September 30, 7:30 PM","where":"6046 W. Lake Sammamish Parkway N.E., Redmond","description":"Sturgill Simpson has emerged as one of music's most inspired and genre-bending artists. Each of Simpson's three universally acclaimed solo albums explore different elements of American music history (bluegrass, country, rock, R&B, soul) and continue to push his work beyond expectations and musical boundaries","website":"https://www.axs.com/events/331732/sturgill-simpson-tickets?q=sturgill","keyWords":"concert music","image":"music.jpg","keyWords.1":""},{"when":"October 1, 2pm","where":"20228 87th Ave West","description":"Allison Cox is the author of the acclaimed Healing Heart anthologies, and editor of Diving in the Moon, the Healing Story Alliance's journal about storytelling as a healing art. She has traveled the world, telling healing stories, folk tales, and true stories. Join us for some adventures of a well-storied life! Open mic to follow. Bring a personal story of ten minutes or less.","website":"http://seattlestorytellers.org/ssg/events/event-4900.html","keyWords":"stories open mic","image":"book.jpg","keyWords.1":"concert music"},{"when":"Tuesdays, 5-8pm","where":"1730 Bradner Pl S, Seattle","description":"Food lovers and gardeners interested in local sustainability will find plentiful networking, relationship-building and learning opportunities at Tilth Alliance. RSVP: careythornton@tilthalliance.org","website":"http://www.seattletilth.org/","keyWords":"gardening volunteer vegetables growing","image":"outdoors.jpg","keyWords.1":"stories open mic"},{"when":"October 7, 2-5pm","where":"4649 Sunnyside Ave. N #205","description":"Designed to help speakers at the beginning to low intermediate levels improve their pronunciation skills and learn more about how to properly produce different sounds in French.","website":"https://afseattle.extranet-aec.com/classes/view/24-workshop-_prononciation/3-adulte/0-all-levels/1-francais/","keyWords":"french language","image":"telephone.jpg","keyWords.1":"gardening volunteer vegetables growing"},{"when":"October 10, 7pm","where":"8312 Greenwood Ave N,","description":"A new group made up primarily of Seattle improv veterans, Always Be Clothing pokes fun a classic cinema moments.","website":"http://www.sketchfest.org/","keyWords":"improv classic movies","image":"telephone.jpg","keyWords.1":"french language"},{"when":"October 3, 7pm","where":"4358 Leary Way NW, Seattle, WA 98107","description":"There?s no shortage of fellow homebrewers and beer freaks nearby. We hold friendly competitions against one another on a bi-annual basis, and even more often, we just get together to hang out and raise a glass.","website":"http://cascadebrewersguild.com/","keyWords":"beer brewing cider","image":"generic.jpg","keyWords.1":""}];
     
     $scope.blankCard = {
       title: "",
