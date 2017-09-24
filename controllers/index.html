@@ -65,14 +65,34 @@
              
           </div>
           <div class="buttonbody buttonbottomrow">
-              <a type="button" class="btn btn-modal" href="#">Arrange Pickup</a>
+            <a type="button" class="btn btn-modal" onclick="openPickupModal()" href="#pickupModal">Arrange Pickup</a>
             <a type="button" class="btn btn-modal" href="#">Call Taxi</a>
             </div>
           <!--<address> {{ currentCard.where }} </address>-->          
         </div>
     </div>
     </div>
-</div>    
+  </div>    
+
+
+  <div id="pickupModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"> Arrange pickup </h4>
+        </div>
+        <div class="modal-body">
+          <p>Cost: {{ currentCard.cost }} </p>    
+          <p>When: {{ currentCard.when }}</p>
+          <p>Where: {{ currentCard.where }}</p>
+          <p>{{ currentCard.description }}</p>
+        </div>
+    </div>
+    </div>
+  </div>    
+
   
 </div>
 
@@ -115,7 +135,7 @@ angular.module('ngAppStrictDemo', [])
       where: "",
       description: "",
       keyWords: "",
-      image: "",
+      image: "book.jpg",
       website: ""
     };
     
@@ -174,6 +194,10 @@ angular.module('ngAppStrictDemo', [])
  
   function openInfoModal() {
     $('#infoModal').modal('show')
+  };
+
+  function openPickupModal() {
+    $('#pickupModal').modal('show')
   };
 
   
