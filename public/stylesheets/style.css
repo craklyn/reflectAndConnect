@@ -28,8 +28,7 @@
             min-width: 250px;
             display: block;
             overflow: hidden;
-            margin-top: -30px;
-            margin-left: -10px;
+            
 
             
             
@@ -43,7 +42,7 @@
         }
 
         p{
-            line-height: 18px;
+            line-height: 20px;
             font-size: 18px;
             color: #333;
         }
