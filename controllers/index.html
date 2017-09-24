@@ -58,9 +58,10 @@
           <p>{{ currentCard.where }}</p>
           <p>{{ currentCard.description }}</p>
           <a role="button" class="btn btn-modal" href="{{ currentCard.website }}">Website</a>
-          <a type="button" class="btn btn-modal" href="#">Find Transit</a>
+          <a type="button" class="btn btn-modal" href="https://maps.google.com?saddr=Current+Location&daddr={{ currentCard.where }}">Find Transit</a>
           <a type="button" class="btn btn-modal" href="#">Arrange Pickup</a>
           <a type="button" class="btn btn-modal" href="#">Call Taxi</a>
+          <!--<address> {{ currentCard.where }} </address>-->          
         </div>
     </div>
     </div>
@@ -126,17 +127,27 @@ angular.module('ngAppStrictDemo', [])
 
     if(results.length > 0) {
       $scope.currentCard = results[0].doc;
+      $scope.updateEmbededMap();
       $scope.showCard = true;
     } else {
         $scope.showCard = false;
     }
+  };
+  
+  $scope.updateEmbededMap = function() {
+    $("address").each(function(){
+    var embed ="<iframe width='425' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+      $(this).html(embed);
+        });
   };
 }]);
  
  
   function openInfoModal() {
     $('#infoModal').modal('show')
-  }
+  };
+
+  
 </script>
 
 </body>
