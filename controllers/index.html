@@ -21,7 +21,14 @@
   <div class="row">
     <div class ="col-xs-8 leftcontent">
         <h2>{{ currentPrompt }} </h2>
-        <textarea rows="15" class="form-control" ng-model="journalEntry" placeholder="Talk about your day" ng-trim="false" ng-change="searchCard()"></textarea>
+        <textarea id="journalID" rows="15" class="form-control" ng-model="journalEntry" placeholder="Talk about your day" ng-trim="false" ng-change="searchCard()"></textarea>
+        <p align="right">
+          <form id="labnol" method="get" action="https://www.google.com/search">
+            <div class="speech">
+              <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+            </div>
+          </form>
+        </p>       
         <p align="right">
           <button type="button" class="btn btn-success" ng-click="nextPrompt()">New Entry</button>
         </p>
@@ -104,6 +111,28 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
 <script src="http://elasticlunr.com/elasticlunr.js"></script>
+<!-- HTML5 Speech Recognition API -->
+<script>
+  function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('journalID').value
+                                 = e.results[0][0].transcript;
+        recognition.stop();
+      };
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+    }
+  }
+</script>
 <script>
  'use strict';
 
@@ -202,10 +231,9 @@ angular.module('ngAppStrictDemo', [])
 
   function openPickupModal() {
     $('#pickupModal').modal('show')
-  };
-
-  
+  };  
 </script>
+
 
 </body>
 </html>
