@@ -4,7 +4,7 @@
 
         }
         h1 {
-            font-size: 18px;
+            font-size: 24px;
             color: white;
             padding-left: 25px;
             padding-top: 20px;
@@ -57,10 +57,17 @@
             
         }
         h2 {
-            font-size: 24px;
+            font-size: 36px;
             font-weight: 600;
             color: #111;
             margin-bottom: 20px;
+        }
+
+        h6{
+            font-size: 36px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 16px;
         }
         
         .form-control{
