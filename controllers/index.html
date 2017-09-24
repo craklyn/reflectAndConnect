@@ -29,7 +29,9 @@
       <h2>Recommended events</h2>
       <a onclick="openInfoModal()" href="#infoModal">
         <div class="rectangle">
-            <img src="images/{{ currentCard.image }}">
+            <div class = "topimage">
+              <img src="images/{{ currentCard.image }}">
+            </div>
             <div class="cardcontent">
                 <h3>{{ currentCard.title }}</h3>
                 <p>Price: {{ currentCard.cost }}</p>
