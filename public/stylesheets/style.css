@@ -100,8 +100,12 @@
 
         a:hover {
             text-decoration:none;
-
         }
+
+        a:focus, a.active, a:active, a:active.focus, a:active:focus {
+            text-decoration:none;
+        }
+
         .btn {
          background: #68DAE9;
          color: black;
@@ -110,13 +114,22 @@
          height: 40px;
          margin-top:10px;
          margin-bottom: 20px;
-         border-color: #29AABB;
-       
+         border-color: #29AABB;       
         } 
-        .btn:hover{
+        .btn:hover, .btn:hover:focus {
             background:#09545E;
             color: white;
-
+        }
+        
+        .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+         background: #68DAE9;
+         color: black;
+         font-size: 16px;
+         min-width: 100px;
+         height: 40px;
+         margin-top:10px;
+         margin-bottom: 20px;
+         border-color: #29AABB;
         }
 
         .btn-moreinfo {
