@@ -33,22 +33,19 @@
         }
 
         p{
-            line-height: 13px;
+            line-height: 18px;
             font-size: 18px;
-            color: #111;
+            color: #333;
         }
         
-
         .maincontent {
             
-
         }
         h2 {
             font-size: 20px;
             font-weight: 600;
             color: #111;
         }
-
         
         .form-control{
             resize:none;
@@ -58,10 +55,9 @@
             color: #111;
             border-color: #4f4f4f;
             border-radius: 8px;
-            
         }
 
-       
+    
 
         placeholder {
             font-size: 18px;
@@ -77,6 +73,7 @@
 
         .cardcontent{
             padding-left: 20px;
+            padding-right: 20px;
         }
 
         .rectangle {
@@ -90,24 +87,45 @@
             border-radius: 8px;
             overflow: hidden;
             color: #111;
+        }
 
-            
-            
+        a:hover {
+            text-decoration:none;
+
         }
         .btn {
          background: #68DAE9;
          color: black;
          font-size: 16px;
-         width: 100px;
+         min-width: 100px;
          height: 40px;
          margin-top:10px;
          margin-bottom: 20px;
          border-color: #29AABB;
+       
         } 
         .btn:hover{
             background:#09545E;
             color: white;
 
+        }
+
+        .btn-moreinfo {
+            width: 94%;
+            
+        }
+
+        .btn-modal{
+            min-width: 23%;
+
+        }
+
+        .modal-body{
+            height:400px;
+        }
+
+        .modal-title {
+            width:300px;
         }
 
  

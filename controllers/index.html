@@ -22,7 +22,7 @@
         <h2>How are you feeling today</h2>
         <textarea rows="15" class="form-control" ng-model="journalEntry" placeholder="Talk about your day" ></textarea>
         <p align="right">
-        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-success">Next question</button>
         </p>
     </div>
     <div class="col-xs-4 rightcontent">
@@ -32,39 +32,36 @@
             <img src="images/filmimage.png">
             <div class="cardcontent">
                 <h3>{{ currentCard.title }}</h3>
-                <p>{{ currentCard.cost }}</p>
-                <p>{{ currentCard.when }}</p>
-                <p>{{ currentCard.where }}</p>
-                <p>{{ currentCard.description }}</p>
+                <p>Price: {{ currentCard.cost }}</p>
+                <p>Date: {{ currentCard.when }}</p>
+                <p>Address: {{ currentCard.where }}</p>
+                <p>Description: {{ currentCard.description }}</p>
                 <p>Debug keywords: {{ currentCard.keywords }} </p>
-                <button type="button" class="btn btn-success">Success</button>
-            </div>
+                <button type="button" class="btn btn-moreinfo">Go to this event</button>
+            </div> 
         </div>
       </a>
     </div>
   </div>
 
-  <div id="infoModal" class="modal fade" role="dialog">
+  <div id="infoModal" class="modal fade" role="dialog" ng-controller="journalController">
     <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Login </h4>
+            <h4 class="modal-title">Go to {{ currentCard.title }} </h4>
         </div>
         <div class="modal-body">
-          <form class="navbar-inline">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Password">
-            </div>
-            <div class="checkbox">
-              <label style="color: white"><input type="checkbox" value="">Remember me</label>
-            </div>                  
-            <button type="submit" class="btn btn-info">Sign In</button>
-            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+          <form class="navbar-inline">    
+            <p>{{ currentCard.cost }} </p>    
+            <p>{{ currentCard.when }}</p>
+            <p>{{ currentCard.where }}</p>
+            <p>{{ currentCard.description }}
+            <button type="button" class="btn btn-modal">Website</button>
+            <button type="button" class="btn btn-modal">Find Transit</button>
+            <button type="button" class="btn btn-modal">Arrange Pickup</button>
+            <button type="button" class="btn btn-modal">Call Taxi</button>
           </form> 
         </div>
     </div>
@@ -96,7 +93,7 @@ angular.module('ngAppStrictDemo', [])
       cost: "Free",
       when: "September 23rd 7:00 PM",
       where: "1515 12th Ave Seattle, WA 98122",
-      description: "description goes here test test test long long long description hope it wraps correctly yikes. daniel is a computer simulation. i love him too much",
+      description: "test",
       keyWords: "",
     },
     {
