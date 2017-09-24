@@ -123,8 +123,10 @@
       recognition.start();
 
       recognition.onresult = function(e) {
-        document.getElementById('journalID').value
-                                 = e.results[0][0].transcript;
+        document.getElementById('journalID').value = e.results[0][0].transcript;
+        angular.element($('[ng-controller]')).scope()['journalEntry'] = e.results[0][0].transcript;
+        angular.element($('[ng-controller]')).scope().forceSearchCard();
+        angular.element($('[ng-controller]')).scope().$apply();
         recognition.stop();
       };
       recognition.onerror = function(e) {
@@ -191,12 +193,8 @@ angular.module('ngAppStrictDemo', [])
     $scope.currentCard = $scope.blankCard;
     $scope.showCard = false;
   }
-  
-  $scope.searchCard = function() {
-    if($scope.journalEntry[$scope.journalEntry.length - 1] !== ' ') {
-      return;
-    };
-  
+
+  $scope.forceSearchCard = function() {
     var results = $scope.es.search($scope.journalEntry, {
       fields: {
         keyWords: {boost: 3},
@@ -205,14 +203,21 @@ angular.module('ngAppStrictDemo', [])
       }
     });
 
-    console.log(results);    
-
     if(results.length > 0) {
       $scope.currentCard = results[0].doc;
       $scope.updateEmbededMap();
       $scope.showCard = true;
     } else {
         $scope.showCard = false;
+    }
+  };
+
+  
+  $scope.searchCard = function() {
+    if($scope.journalEntry[$scope.journalEntry.length - 1] !== ' ') {
+      return;
+    } else {
+      $scope.forceSearchCard();
     }
   };
   
