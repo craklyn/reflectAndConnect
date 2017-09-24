@@ -124,11 +124,6 @@
         .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
          background: #68DAE9;
          color: black;
-         font-size: 16px;
-         min-width: 100px;
-         height: 40px;
-         margin-top:10px;
-         margin-bottom: 20px;
          border-color: #29AABB;
         }
 
