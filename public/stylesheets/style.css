@@ -125,11 +125,16 @@
         }
 
         .btn-modal{
-            min-width: 200px;
-            min-height: 200px;
-            top: 50%;
-            left: 50%;
+            width: 130px;
+            min-height: 100px;
+            margin-left: 20px;
+            
+            
+        }
 
+        .buttonbody{
+            
+            margin-left: 60px;
         }
 
         .modal-body{
