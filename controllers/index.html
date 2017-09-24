@@ -157,6 +157,9 @@ angular.module('ngAppStrictDemo', [])
   $scope.nextPrompt = function() {
     var whichPrompt = Math.floor(Math.random() * $scope.promptList.length - 1) + 1;
     $scope.currentPrompt = $scope.promptList[whichPrompt];
+    $scope.journalEntry = "";
+    $scope.currentCard = $scope.blankCard;
+    $scope.showCard = false;
   }
   
   $scope.searchCard = function() {
