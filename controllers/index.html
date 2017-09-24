@@ -59,10 +59,12 @@
           <p>{{ currentCard.when }}</p>
           <p>{{ currentCard.where }}</p>
           <p>{{ currentCard.description }}</p>
-          <a role="button" class="btn btn-modal" href="{{ currentCard.website }}">Website</a>
-          <a type="button" class="btn btn-modal" href="https://maps.google.com?saddr=Current+Location&daddr={{ currentCard.where }}&dirflg=r">Find Transit</a>
-          <a type="button" class="btn btn-modal" href="#">Arrange Pickup</a>
-          <a type="button" class="btn btn-modal" href="#">Call Taxi</a>
+          <div class ="buttonbody">
+             <a role="button" class="btn btn-modal" href="{{ currentCard.website }}">Website</a>
+             <a type="button" class="btn btn-modal" href="https://maps.google.com?saddr=Current+Location&daddr={{ currentCard.where }}&dirflg=r">Find Transit</a>
+             <a type="button" class="btn btn-modal" href="#">Arrange Pickup</a>
+            <a type="button" class="btn btn-modal" href="#">Call Taxi</a>
+          </div>
           <!--<address> {{ currentCard.where }} </address>-->          
         </div>
     </div>
