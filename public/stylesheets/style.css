@@ -1,6 +1,6 @@
         .titlebar {
             background-color: #1974C6;
-            height: 76px;
+            height: 86px;
 
         }
         h1 {
@@ -41,6 +41,11 @@
 
         }
 
+        h4{
+            font-size:24px;
+            color: #111;
+        }
+
         p{
             line-height: 20px;
             font-size: 18px;
@@ -51,9 +56,10 @@
             
         }
         h2 {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 600;
             color: #111;
+            margin-bottom: 20px;
         }
         
         .form-control{
@@ -133,17 +139,22 @@
         }
 
         .btn-modal{
-            width: 130px;
+            width: 170px;
             height: 100px;
             margin-left: 20px;
             text-justify: center;
+            padding-top: 36px;
+            font-size: 20px;
             
             
         }
 
+        
+
         .buttonbody{
             
-            margin-left: 122px;
+            margin-left: 78px;
+           
         }
 
         .modal-body{
@@ -151,7 +162,7 @@
         }
 
         .modal-title {
-            width:300px;
+            width:500px;
         }
 
  
