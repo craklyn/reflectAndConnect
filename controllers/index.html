@@ -22,14 +22,14 @@
         <h2>How are you feeling today</h2>
         <textarea rows="15" class="form-control" ng-model="journalEntry" placeholder="Talk about your day" ></textarea>
         <p align="right">
-        <button type="button" class="btn btn-success">Next question</button>
+          <button type="button" class="btn btn-success" ng-click="searchCard()">Success</button>
         </p>
     </div>
-    <div class="col-xs-4 rightcontent">
+    <div class="col-xs-4 rightcontent" ng-show="showCard">
       <h2>Recommended events</h2>
       <a onclick="openInfoModal()" href="#infoModal">
         <div class="rectangle">
-            <img src="images/filmimage.png">
+            <img src="{{ currentCard.image }}">
             <div class="cardcontent">
                 <h3>{{ currentCard.title }}</h3>
                 <p>Price: {{ currentCard.cost }}</p>
@@ -76,7 +76,7 @@
 <p id="demo"></p>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-<!-- <script src="../bower_components/angular/angular.min.js"></script> -->
+<script src="http://elasticlunr.com/elasticlunr.js"></script>
 <script>
  'use strict';
 
@@ -85,7 +85,6 @@ angular.module('ngAppStrictDemo', [])
 // rather than an explicit annotation
 .controller('journalController', ['$scope', function($scope) {
   $scope.journalEntry = "";
-  $scope.b = 2;
   
   $scope.cards = [
     {
@@ -93,13 +92,74 @@ angular.module('ngAppStrictDemo', [])
       cost: "Free",
       when: "September 23rd 7:00 PM",
       where: "1515 12th Ave Seattle, WA 98122",
-      description: "test",
-      keyWords: "",
+      description: "description goes here test test test long long long description hope it wraps correctly yikes. daniel is a computer simulation. i love him too much",
+      keyWords: "film festival movie cinema",
+      image: "images/filmimage.png",
     },
     {
+      title: "Another description to test",
+      cost: "Free",
+      when: "September 23rd 7:00 PM",
+      where: "1515 12th Ave Seattle, WA 98122",
+      description: "This is the second description.  Very neat",
+      keyWords: "second description cool",
+      image: "images/filmimage.png",
     },
-  ];
-  $scope.currentCard = $scope.cards[0];
+    {
+      title: "Local music party",
+      cost: "Free",
+      when: "September 23rd 7:00 PM",
+      where: "1515 12th Ave Seattle, WA 98122",
+      description: "music science popularity contest so cool so suave so neato",
+      keyWords: "music party",
+      image: "images/filmimage.png",
+    }];
+    
+    $scope.blankCard = {
+      title: "",
+      cost: "",
+      when: "",
+      where: "",
+      description: "",
+      keyWords: "",
+      image: "",
+      website: ""
+    };
+    
+    $scope.currentCard = $scope.blankCard;
+    $scope.showCard = false;
+
+
+  $scope.es = elasticlunr(function () {
+    this.addField('title');
+    this.addField('description');
+    this.addField('keywords');
+    this.setRef('id');
+  });
+
+  for (var i = 0; i < $scope.cards.length; i++) {
+    $scope.cards[i].id = i;
+    $scope.es.addDoc($scope.cards[i]);
+  };
+
+  $scope.searchCard = function() {
+    var results = $scope.es.search($scope.journalEntry, {
+      fields: {
+        keyWords: {boost: 3},
+        title: {boost: 2},
+        description: {boost: 1}
+      }
+    });
+
+    console.log(results);    
+
+    if(results.length > 0) {
+      $scope.currentCard = results[0].doc;
+      $scope.showCard = true;
+    } else {
+        $scope.showCard = false;
+    }
+  };
 }]);
  
  
