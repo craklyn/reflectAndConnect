@@ -20,14 +20,14 @@
   </div>
   <div class="row">
     <div class ="col-xs-8 leftcontent">
-        <div class="col-xs-8"><h2>{{ currentPrompt }} </h2></div>
-        <div class="col-xs-4"><p align="right">
+        <div class="col-xs-8"><h2 style="margin-left:-12px;">{{ currentPrompt }} </h2></div>
+        <div class="col-xs-4">
           <form id="labnol" method="get" action="https://www.google.com/search">
             <div class="speech">
-              <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+              <button type="button" class="btn btn-success" onclick="startDictation()" style="margin-left:87px;">Speak</button>
             </div>
           </form>
-        </p> </div>
+        </div>
         <textarea id="journalID" rows="15" class="form-control" ng-model="journalEntry" placeholder="Talk about your day" ng-trim="false" ng-change="searchCard()"></textarea>
               
         <p align="right">
