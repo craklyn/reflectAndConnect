@@ -19,10 +19,20 @@
             width: 98.8%;
         }
 
-        img {
+        .topimage{
+            
+        }
 
-            width:100%;
+        img {
             height: 110px;
+            min-width: 250px;
+            display: block;
+            overflow: hidden;
+            margin-top: -30px;
+            margin-left: -10px;
+
+            
+            
         }
 
         h3{
