@@ -126,15 +126,16 @@
 
         .btn-modal{
             width: 130px;
-            min-height: 100px;
+            height: 100px;
             margin-left: 20px;
+            text-justify: center;
             
             
         }
 
         .buttonbody{
             
-            margin-left: 60px;
+            margin-left: 122px;
         }
 
         .modal-body{
