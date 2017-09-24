@@ -11,13 +11,13 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container" ng-controller="journalController">
   <div class="row titlebar">
     <div class="col-xs-12">
         <h1> Reflect & Connect </h1>
     </div>
   </div>
-  <div class="row" ng-controller="journalController">
+  <div class="row">
     <div class ="col-xs-8 leftcontent">
         <h2>How are you feeling today</h2>
         <textarea rows="15" class="form-control" ng-model="journalEntry" placeholder="Talk about your day" ></textarea>
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div id="infoModal" class="modal fade" role="dialog" ng-controller="journalController">
+  <div id="infoModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -53,16 +53,14 @@
             <h4 class="modal-title">Go to {{ currentCard.title }} </h4>
         </div>
         <div class="modal-body">
-          <form class="navbar-inline">    
-            <p>{{ currentCard.cost }} </p>    
-            <p>{{ currentCard.when }}</p>
-            <p>{{ currentCard.where }}</p>
-            <p>{{ currentCard.description }}
-            <button type="button" class="btn btn-modal">Website</button>
-            <button type="button" class="btn btn-modal">Find Transit</button>
-            <button type="button" class="btn btn-modal">Arrange Pickup</button>
-            <button type="button" class="btn btn-modal">Call Taxi</button>
-          </form> 
+          <p>{{ currentCard.cost }} </p>    
+          <p>{{ currentCard.when }}</p>
+          <p>{{ currentCard.where }}</p>
+          <p>{{ currentCard.description }}</p>
+          <a role="button" class="btn btn-modal" href="{{ currentCard.website }}">Website</a>
+          <a type="button" class="btn btn-modal" href="#">Find Transit</a>
+          <a type="button" class="btn btn-modal" href="#">Arrange Pickup</a>
+          <a type="button" class="btn btn-modal" href="#">Call Taxi</a>
         </div>
     </div>
     </div>
