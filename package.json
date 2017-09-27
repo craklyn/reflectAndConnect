@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A helpful web interface for journaling.  Exposes users to relevant civic activities and/or displays summaries of the reflections over time by dashboard.",
   "main": "index.js",
+  "config": {
+    "port": "4000"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -6,6 +6,6 @@ var path = require('path');
 require('./routes')(app);
 
 // Set server port
-var port = 4000;
+var port = process.env.npm_package_config_port;
 app.listen(port);
 console.log('Server running at http://localhost:' + port + '/');
